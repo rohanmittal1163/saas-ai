@@ -1,4 +1,4 @@
-import { isApiLimitEnd, isPro } from '@/lib/apiLimit';
+import { increaseApiLimit, isApiLimitEnd, isPro } from '@/lib/apiLimit';
 import { auth } from '@clerk/nextjs';
 import { NextResponse } from 'next/server';
 import Replicate from 'replicate';
@@ -26,7 +26,7 @@ export async function POST(req: Request, res: NextResponse) {
 		return new NextResponse('Free limits expire', { status: 402 });
 	}
 
-	const output = await replicate.run(
+	const output: any = await replicate.run(
 		'suno-ai/bark:b76242b40d67c76ab6742e987628a2a9ac019e11d56ab96c4e91ce03b79b2787',
 		{
 			input: {
