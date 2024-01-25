@@ -21,7 +21,7 @@ export default async function DashboardLayout({
 					<Sidebar cnt={free_limit} isPro={ispro} />
 				</div>
 				<div className="flex-col gap-0 items-center justify-center w-full">
-					<Navbar cnt={free_limit} />
+					<Navbar isPro={ispro} cnt={free_limit} />
 					{children}
 				</div>
 			</div>

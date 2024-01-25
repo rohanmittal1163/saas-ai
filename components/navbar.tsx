@@ -6,7 +6,13 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 import Sidebar from './sidebar';
 
-export default function Navbar({ cnt }: { cnt: number }) {
+export default function Navbar({
+	cnt,
+	isPro,
+}: {
+	cnt: number;
+	isPro: boolean;
+}) {
 	return (
 		<div className=" flex flex-row items-center w-full p-3 justify-between md:justify-end bg-white">
 			<Sheet>
@@ -22,7 +28,7 @@ export default function Navbar({ cnt }: { cnt: number }) {
 
 				<SheetContent side="left" className="p-0 m-0 text-white">
 					<div className="flex w-full bg-slate-800  py-7 px-4 h-full  transition-all flex-col gap-10">
-						<Sidebar cnt={cnt} />
+						<Sidebar cnt={cnt} isPro={isPro} />
 					</div>
 				</SheetContent>
 			</Sheet>
