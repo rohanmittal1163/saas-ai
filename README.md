@@ -48,6 +48,10 @@ POSTGRES_URL_NON_POOLING
 First, run the development server:
 
 ```bash
+npm install
+```
+
+```bash
 npm run dev
 # or
 yarn dev
